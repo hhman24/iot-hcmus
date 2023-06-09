@@ -1,7 +1,7 @@
 # 🦾 INTERNET OF THINGS
 Cargo truck controlled via mobile app
 
-- [App inventor](https://appinventor.mit.edu/), cloud firebase to store data.
+- [App inventor](https://appinventor.mit.edu/), cloud firebase to store data, [3rd party service to send mail to phone](https://ifttt.com/maker_webhooks)
 
 - Vehicles transport goods in line, identify the location of the path through information on the cloud and report the location of obstacles, abnormal temperature and humidity on the way to the cloud
 
