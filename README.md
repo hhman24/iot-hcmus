@@ -1,6 +1,8 @@
 # 🦾 INTERNET OF THINGS
 Cargo truck controlled via mobile app
 
+- [App inventor](https://appinventor.mit.edu/), cloud firebase to store data.
+
 - Vehicles transport goods in line, identify the location of the path through information on the cloud and report the location of obstacles, abnormal temperature and humidity on the way to the cloud
 
 - When starting to transport, the vehicle will send an ID signal of the goods being transported to the station, when it is close to the station, it will notify again through the cloud and emit a beep when it arrives and send a notification to the next station. for the previous station
@@ -43,5 +45,4 @@ Cargo truck controlled via mobile app
 
 ![](./pic/p4.jpg)
 
-
-## 📽️ Link Demo
+## 📽️ Link Demo [HERE](https://www.youtube.com/watch?v=0DgIqhF2sC4&t=10s)
