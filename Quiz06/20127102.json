@@ -1,0 +1,203 @@
+[
+    {
+        "id": "e6e1127c883e41b1",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "42f26a3d129e24f8",
+        "type": "ui_button",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "group": "4a32ba51f9efe142",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "star",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "c4fcac42ed98d5d5"
+            ]
+        ]
+    },
+    {
+        "id": "08233bcfdc557ad6",
+        "type": "function",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "func": "flow.set(\"a\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "42f26a3d129e24f8"
+            ]
+        ]
+    },
+    {
+        "id": "b31a49419e414bb2",
+        "type": "ui_text_input",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "label": "MSSV",
+        "tooltip": "",
+        "group": "4a32ba51f9efe142",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "08233bcfdc557ad6"
+            ]
+        ]
+    },
+    {
+        "id": "c4fcac42ed98d5d5",
+        "type": "function",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "func": "msg.payload = flow.get(\"a\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "76e9b7b7092d6a03"
+            ]
+        ]
+    },
+    {
+        "id": "76e9b7b7092d6a03",
+        "type": "mqtt out",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "topic": "20127102/mssv",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4040b111cd18aed6",
+        "x": 820,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fc975af948598760",
+        "type": "ui_text",
+        "z": "e6e1127c883e41b1",
+        "group": "4a32ba51f9efe142",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Name",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 470,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a03c4890f10d5e5f",
+        "type": "mqtt in",
+        "z": "e6e1127c883e41b1",
+        "name": "",
+        "topic": "20127102/name",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4040b111cd18aed6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "fc975af948598760"
+            ]
+        ]
+    },
+    {
+        "id": "4a32ba51f9efe142",
+        "type": "ui_group",
+        "name": "MSSV",
+        "tab": "4ae9e900b3d0420a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4040b111cd18aed6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4ae9e900b3d0420a",
+        "type": "ui_tab",
+        "name": "20CLC01",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
